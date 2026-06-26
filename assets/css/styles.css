@@ -271,7 +271,7 @@ ul { list-style: none; }
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 .port-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,.5); }
-.port-card img { width: 100%; height: auto; display: block; }
+.port-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; display: block; }
 
 /* ── Reviews ─────────────────────────────────────────────────── */
 .reviews-meta { display: flex; align-items: center; gap: 12px; justify-content: center; margin-top: 14px; }
