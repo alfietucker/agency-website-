@@ -8,14 +8,47 @@ SEO + GEO optimised code that Google can read.
 ## Structure
 
 ```
-index.html              # The page (all sections + structured data)
-robots.txt              # Crawler rules + sitemap reference
-sitemap.xml             # XML sitemap
+index.html                       # Home page (all sections + contact form + structured data)
+locations/
+  roofing-web-design-joondalup.html
+  roofing-web-design-fremantle.html
+  roofing-web-design-rockingham.html
+  roofing-web-design-mandurah.html   # Per-suburb local-SEO landing pages
+robots.txt                       # Crawler rules + sitemap reference
+sitemap.xml                      # XML sitemap (home + all location pages)
 assets/
-  css/styles.css        # Dark + gold theme, fully responsive
-  js/main.js            # Slider, mobile nav, scroll reveal
-  img/                  # Drop real screenshots/logos here
+  css/styles.css                 # Dark + gold theme, fully responsive
+  js/main.js                     # Slider, mobile nav, scroll reveal, contact form
+  img/*.svg                      # Placeholder mockups (replace with real screenshots)
 ```
+
+## Contact form
+
+`index.html` has a working contact form (`#contact`) with name/email/phone/
+business/service/message fields, accessible labels, native validation, a
+honeypot anti-spam field, and AJAX submit handling in `main.js`.
+
+**To receive enquiries**, point the form at an email service — no backend
+needed. Either:
+- **Formspree**: create a form at formspree.io and replace `your-form-id` in
+  the `<form action="...">` of `index.html`, or
+- **Netlify Forms**: add `data-netlify="true"` to the `<form>` tag if hosting
+  on Netlify.
+
+Until you do, the form shows a friendly confirmation without sending.
+
+## Location / local-SEO pages
+
+The `locations/` pages target "web design <suburb>" searches. Each has its own
+localised title/description/keywords, GEO meta tags with the suburb's
+coordinates, `Service` + `BreadcrumbList` JSON-LD, and internal links to/from
+the home page ("Areas We Serve" section). Duplicate a file, swap the suburb
+name, coordinates and nearby-suburb list, and add it to `sitemap.xml` to add
+more.
+
+> **Note:** the placeholder images are SVGs (great for layout + alt text). For
+> social sharing, also export a real `og-cover.jpg` (1200×630) — some platforms
+> don't render SVG OG images — and update the `og:image` tags.
 
 ## SEO & GEO optimisation (what Google reads)
 

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" role="img">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#26262b"/><stop offset="1" stop-color="#161619"/></linearGradient></defs>
+  <rect width="500" height="620" rx="14" fill="url(#g)"/>
+  <rect x="1" y="1" width="498" height="618" rx="13" fill="none" stroke="#2c2c31"/>
+  <circle cx="250" cy="248" r="90" fill="#2f2f35"/>
+  <path d="M100 620 q150 -200 300 0 Z" fill="#2f2f35"/>
+  <circle cx="250" cy="248" r="90" fill="none" stroke="#f5b324" stroke-width="3"/>
+  <text x="250" y="592" text-anchor="middle" fill="#5a5a62" font-family="Arial" font-size="18">Founder photo</text>
+</svg>

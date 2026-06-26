@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" role="img">
+  <rect width="820" height="600" rx="14" fill="#1d1d20"/>
+  <rect x="1" y="1" width="818" height="598" rx="13" fill="none" stroke="#2c2c31"/>
+  <rect x="0" y="0" width="820" height="46" rx="14" fill="#26262b"/>
+  <rect x="0" y="32" width="820" height="14" fill="#26262b"/>
+  <circle cx="26" cy="23" r="6" fill="#d8341f"/>
+  <circle cx="48" cy="23" r="6" fill="#f5b324"/>
+  <circle cx="70" cy="23" r="6" fill="#4caf50"/>
+  <rect x="100" y="14" width="690" height="18" rx="9" fill="#161619"/>
+  <rect x="40" y="78" width="369" height="26" rx="6" fill="#f5b324"/>
+  <rect x="40" y="118" width="508" height="12" rx="6" fill="#3a3a40"/>
+  <rect x="40" y="138" width="410" height="12" rx="6" fill="#3a3a40"/>
+  <rect x="40" y="176" width="150" height="40" rx="8" fill="#f5b324"/>
+  <rect x="520" y="78" width="260" height="160" rx="10" fill="#161619" stroke="#2c2c31"/>
+  <rect x="40" y="262" width="213" height="120" rx="10" fill="#202024" stroke="#2c2c31"/>
+  <rect x="286" y="262" width="213" height="120" rx="10" fill="#202024" stroke="#2c2c31"/>
+  <rect x="532" y="262" width="213" height="120" rx="10" fill="#202024" stroke="#2c2c31"/>
+  <text x="410" y="574" text-anchor="middle" fill="#5a5a62" font-family="Arial, sans-serif" font-size="20">Your new website</text>
+</svg>

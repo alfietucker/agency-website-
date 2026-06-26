@@ -50,6 +50,60 @@
     render();
   }
 
+  // Contact form (progressive enhancement — works with Formspree/Netlify endpoints)
+  var form = document.getElementById("lead-form");
+  if (form) {
+    var statusEl = form.querySelector(".contact-form__status");
+    var submitBtn = form.querySelector(".contact-form__submit");
+
+    function setStatus(msg, type) {
+      if (!statusEl) return;
+      statusEl.textContent = msg;
+      statusEl.className = "contact-form__status is-" + type;
+      statusEl.hidden = false;
+    }
+
+    form.addEventListener("submit", function (e) {
+      // Honeypot: if filled, silently drop (bot)
+      if (form.querySelector('[name="_gotcha"]').value) { e.preventDefault(); return; }
+
+      if (!form.checkValidity()) { return; } // let the browser show native validation
+
+      // If the action is still the placeholder, don't attempt a real POST.
+      if (form.getAttribute("action").indexOf("your-form-id") !== -1) {
+        e.preventDefault();
+        setStatus("✅ Thanks! Connect this form to your email service (see README) to start receiving enquiries.", "success");
+        form.reset();
+        return;
+      }
+
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            setStatus("✅ Thanks! Your enquiry is on its way — we'll be in touch shortly.", "success");
+            form.reset();
+          } else {
+            setStatus("⚠️ Something went wrong. Please call us on +61 8 6555 0123.", "error");
+          }
+        })
+        .catch(function () {
+          setStatus("⚠️ Network error. Please call us on +61 8 6555 0123.", "error");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send My Enquiry";
+        });
+    });
+  }
+
   // Scroll reveal
   var revealEls = document.querySelectorAll(
     ".section__head, .card-shot, .panel, .review, .story, .faq__item, .about__copy, .stat-banner"
