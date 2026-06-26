@@ -39,6 +39,28 @@
     targets.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  // Reviews slider (mobile: step through cards; desktop shows all 3)
+  var track = document.getElementById("reviews-track");
+  if (track) {
+    var cards = Array.prototype.slice.call(track.children);
+    var idx = 0;
+    function showReviews() {
+      var mobile = window.matchMedia("(max-width: 640px)").matches;
+      cards.forEach(function (c, i) {
+        c.style.display = mobile ? (i === idx ? "flex" : "none") : "flex";
+      });
+    }
+    document.querySelectorAll("[data-slide]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var dir = btn.getAttribute("data-slide") === "next" ? 1 : -1;
+        idx = (idx + dir + cards.length) % cards.length;
+        showReviews();
+      });
+    });
+    window.addEventListener("resize", showReviews);
+    showReviews();
+  }
+
   // Contact form
   var form = document.getElementById("lead-form");
   if (form) {
